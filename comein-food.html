@@ -16,6 +16,15 @@
             margin-top: 40px;
         }
 
+        .gradient-buttons .btn {
+		background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 49%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
+		background-repeat: repeat-x;
+	    }
+
+	    .card {
+		margin: 10px;
+		box-shadow: 0 5px 10px -2.5px;
+	    }
   </style>
 </head>
 <body>
@@ -26,29 +35,17 @@
 	background-size: cover;  background-repeat: no-repeat; 
 	background-position: center center; ">
 
-	<nav class="navbar  navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">ComeIN</a>
-		 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
-		    	<li class="nav-item">
-		        	<a class="nav-link" href="comein-home.html">Home</a>
-		      	</li>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="comein-tour.html">Tour Packages</a>
-		      	</li>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="comein-hotel.html">Hotel</a>
-		      	</li>
-		      	<li class="nav-item active">
-		        	<a class="nav-link" href="comein-food.html">Food and Dining</a>
-		      	</li>
-		    </ul>
-		 </div>
-		</nav>
+    <div class="d-flex justify-content-center p-1 ">
+        <img src="assets/logo2.png" width="17%" style="min-width: 230px;">
+    </div>	
 
+    <div class="container-fluid d-flex flex-wrap justify-content-center p-1">
+            <!-- <a href="comein-home.html" type="button" class="btn btn-lg btn-danger m-1">Home</a> -->
+            <a href="comein-tour.html" type="button" class="btn btn-lg btn-danger m-1">&nbsp;&nbsp;Tours&nbsp;&nbsp;</a>
+            <a href="comein-hotel.html" type="button" class="btn btn-lg btn-danger m-1">&nbsp;&nbsp;Hotels&nbsp;&nbsp;</a>
+            <a href="comein-food.html" type="button" class="btn btn-lg btn-danger m-1 active">&nbsp;&nbsp;Dining&nbsp;&nbsp;</a>
+    </div>
+    
 
     <div class="container bcontent">
 
