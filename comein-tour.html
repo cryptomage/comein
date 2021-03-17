@@ -55,78 +55,136 @@
 		 </div>
 		</nav>
 
-    <table class="center">
-
-    <tr><td>
-        <div class="container bcontent">
-            <div class="card" style="width: 100%;">
-                <div class="row no-gutters">
-                    <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
-                        <img class="card-img" src="assets/tour/1.png">
-                    </div>
-                    <div class="col-md-6 no-gutters">
-                        <div class="card-body">
-                            <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
-                            <p class="card-text">
-                                <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">MY TRAVELICIOUS TRAVEL AGENCY</span>
-                            </p>
-                            <p>
-                                <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte</span> <BR>
-                                <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">(077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447</span> <BR>
-                                <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">ytravelicious@yahoo.com / mytravelicious09@gmail.com</span>
-                            </p>
+        <div class="demo-html">
+            <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dataTables_length" id="example_length">
+                            <label>Show 
+                                <select name="example_length" aria-controls="example" class="custom-select custom-select-sm form-control form-control-sm">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select> entries
+                            </label>
                         </div>
                     </div>
-                    <div class="col-md-3  align-items-center">
-                        <div class="card-body text-center">
-                            <p class="card-text">
-                                <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
-                                <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
-                                <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 6,500.00</h2>
-                                <a href="https://mytraveliciousph.com/" class="btn btn-primary">Book Now</a>
-                            </p>
-                        </div>
+                    <div class="col-sm-12 col-md-6"><div id="example_filter" class="dataTables_filter">
+                        <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example"></label>
                     </div>
                 </div>
             </div>
-        </div>
-    </td></tr>
-    <tr><td>
-        <div class="container bcontent">
-
-            <div class="card" style="width: 100%;">
-                <div class="row no-gutters">
-                    <div class="col-sm-3">
-                        <img class="card-img" src="assets/tour/1.png">
-                    </div>
-                    <div class="col-sm-9 no-gutters">
-                        <div class="card-body">
-                            <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-
-                            <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY
-                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                            </p>
-                            <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                    <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
-
-                            <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
-
-
+            <div class="row"><div class="col-sm-12">
+                <table id="example" class="table table-bordered dataTable" style="width: 100%;" role="grid" aria-describedby="example_info">
+                    <tr><td>
+                        <div class="container bcontent">
+                            <div class="card" style="width: 100%;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                        <img class="card-img" src="assets/tour/1.png">
+                                    </div>
+                                    <div class="col-md-6 no-gutters">
+                                        <div class="card-body">
+                                            <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                            <p class="card-text">
+                                                <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">MY TRAVELICIOUS TRAVEL AGENCY</span>
+                                            </p>
+                                            <p>
+                                                <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte</span> <BR>
+                                                <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">(077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447</span> <BR>
+                                                <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">ytravelicious@yahoo.com / mytravelicious09@gmail.com</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3  align-items-center">
+                                        <div class="card-body text-center">
+                                            <p class="card-text">
+                                                <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                                <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                                <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 6,500.00</h2>
+                                                <a href="https://mytraveliciousph.com/" class="btn btn-primary">Book Now</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </td></tr>
+                    <tr><td>
+                        <div class="container bcontent">
+                
+                            <div class="card" style="width: 100%;">
+                                <div class="row no-gutters">
+                                    <div class="col-sm-3">
+                                        <img class="card-img" src="assets/tour/1.png">
+                                    </div>
+                                    <div class="col-sm-9 no-gutters">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                
+                                            <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY
+                                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                            <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                            </p>
+                                            <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
+                                                <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                                    <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                
+                                            <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                
+                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+            </div>
+            <div class="col-sm-12 col-md-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                    <ul class="pagination">
+                        <li class="paginate_button page-item previous disabled" id="example_previous">
+                            <a href="#" aria-controls="example" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                        </li>
+                        <li class="paginate_button page-item active">
+                            <a href="#" aria-controls="example" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                        </li>
+                        <li class="paginate_button page-item ">
+                            <a href="#" aria-controls="example" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                        </li>
+                        <li class="paginate_button page-item ">
+                            <a href="#" aria-controls="example" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                        </li>
+                        <li class="paginate_button page-item ">
+                            <a href="#" aria-controls="example" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                        </li>
+                        <li class="paginate_button page-item ">
+                            <a href="#" aria-controls="example" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                        </li>
+                        <li class="paginate_button page-item ">
+                            <a href="#" aria-controls="example" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+                        </li>
+                        <li class="paginate_button page-item next" id="example_next">
+                            <a href="#" aria-controls="example" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </td></tr>
-</table>
-</div>
+    </div>
+</div>    
 
-<script text="javascript">
+<script type="text/javascript">
     $(document).ready(function() {
     $('#example').DataTable();
 } );
