@@ -11,12 +11,48 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+  <script>
+       $(document).ready( function () {
+       $('#table_Hotels').DataTable({
+            responsive: true,
+            "lengthMenu": [[2, 5, 10, 25, 50, -1], [2, 5, 10, 25, 50, "All"]],}
+        );
+      
+        } );
+
+
+  </script>
+
+
   <style type="text/css">
          .bcontent {
             margin-top: 40px;
         }
 
+    .table {
+    border-collapse: separate;
+    border-spacing:0 20px;
+}
+th {
+        background-color: transparent;
+        color: white;
+      }
+      th,
+      td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid white;
+        padding: 5px;
+      }
+      h2 {
+        color: #4287f5;
+      }
   </style>
+
 </head>
 <body>
 
@@ -51,71 +87,370 @@
 
 
     <div class="container bcontent">
-
-        <div class="card" style="width: 100%;">
-            <div class="row no-gutters">
-                <div class="col-sm-3">
-                    <img class="card-img" src="assets/tour/1.png">
-                </div>
-                <div class="col-sm-9 no-gutters">
-                    <div class="card-body">
-                        <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                        
-                        <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY <BR>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        </p>
-                        <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
-                        
-                        <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
-                        
-
+        <div class="table-responsive">
+        <table class="table dt-responsive nowrap" id="table_Hotels" style="width:100%">
+            <thead>
+                    <tr class="text-center bg-primary text-white rounded-pill mb-2">
+                            <th></th>
+                            <th></th>
+                    </tr>
+            </thead>
+            <tbody>
+                    
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/14.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> PANNZIAN BEACH RESORT 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Pancian, Pagudpud <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (0920)9520662 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> pannzian@yahoo.com</p>
+                                    
+                                    <a href="http://www.pannzian.com/" class="btn btn-primary">QUEEN | Starting at PHP3,000  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/15.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> IKANI SURF RESORT 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Balaoi, Pagudpud <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 09188885953 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> zephyrikani@gmail.com</p>
+                                    
+                                    <a href="https://www.facebook.com/IkaniSurf/" class="btn btn-primary">GARDEN VILLA | Starting at PHP3,250   Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/16.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> JAVA HOTEL 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Gen. Segundo Ave., Laoag City <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 770 5996 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> javahotel@gmail.com</p>
+                                    
+                                    <a href="http://www.javahotel.com.ph/" class="btn btn-primary">DELUXE TWIN | Starting at PHP2,939.13   Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/17.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> PANGIL BEACH RESORT 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Pangil, Currimao, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 09778999904 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> pangilbeachresort@yahoo.com</p>
+                                    
+                                    <a href="https://www.facebook.com/PangilBeachResort/" class="btn btn-primary">CASITAS | Starting at PHP1,750   Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/18.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i>VILLA ANDREA BEACH RESORT 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Caparispisan, Pagudpud, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 09173251096, 09989982705 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> villaandrea@pagudpudbeachresort.com.ph</p>
+                                    
+                                    <a href="http://www.pagudpudbeachresort.com.ph/book-now.html/" class="btn btn-primary">STANDARD ROOM | Starting at PHP2,000   Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/19.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/20.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/21.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/22.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/23.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/24.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Batac City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class="card" style="width: 100%;">
+                        <div class="row no-gutters">
+                        <td width="30%">
+                            <div>
+                                <img class="card-img" src="assets/hotels/25.png">
+                            </div>
+                        </td>
+                        <td width="70%">
+                            <div class="col-sm-9 no-gutters">
+                                <div class="card-body">
+                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                    
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
+                                    </p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Batac City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    
+                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+               
+                    </tbody>
+                    </table>
                     </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <div class="container bcontent">
-
-        <div class="card" style="width: 100%;">
-            <div class="row no-gutters">
-                <div class="col-sm-3">
-                    <img class="card-img" src="assets/tour/1.png">
-                </div>
-                <div class="col-sm-9 no-gutters">
-                    <div class="card-body">
-                        <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                        
-                        <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                        </p>
-                        <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
-                        
-                        <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
-
 
 </body>
 </html>
