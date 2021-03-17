@@ -10,10 +10,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
   <style type="text/css">
-         .bcontent {
+        .bcontent {
             margin-top: 40px;
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
         }
 
   </style>
@@ -49,37 +55,34 @@
 		 </div>
 		</nav>
 
-    <table>
+    <table class="center">
 
-    <tr>
+    <tr><td>
         <div class="container bcontent">
             <div class="card" style="width: 100%;">
                 <div class="row no-gutters">
-                    <div class="col-md-3">
+                    <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
                         <img class="card-img" src="assets/tour/1.png">
                     </div>
                     <div class="col-md-6 no-gutters">
                         <div class="card-body">
-                            <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5><br>
+                            <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
                             <p class="card-text">
-                                <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY <BR>
+                                <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">MY TRAVELICIOUS TRAVEL AGENCY</span>
                             </p>
-                            <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com
+                            <p>
+                                <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte</span> <BR>
+                                <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">(077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447</span> <BR>
+                                <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">ytravelicious@yahoo.com / mytravelicious09@gmail.com</span>
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-3 no-gutters">
-                        <div class="">
+                    <div class="col-md-3  align-items-center">
+                        <div class="card-body text-center">
                             <p class="card-text">
-                                <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i><br>
-                                Starting at <br>
-                                PHP 6,500.00 <br>
+                                <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 6,500.00</h2>
                                 <a href="https://mytraveliciousph.com/" class="btn btn-primary">Book Now</a>
                             </p>
                         </div>
@@ -87,8 +90,8 @@
                 </div>
             </div>
         </div>
-    </tr>
-    <tr>
+    </td></tr>
+    <tr><td>
         <div class="container bcontent">
 
             <div class="card" style="width: 100%;">
@@ -119,10 +122,15 @@
                 </div>
             </div>
         </div>
-    </tr>
+    </td></tr>
 </table>
 </div>
 
+<script text="javascript">
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
 
 
 </body>
