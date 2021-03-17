@@ -11,8 +11,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <style type="text/css">
-  
+	.gradient-buttons .btn {
+		background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 49%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
+		background-repeat: repeat-x;
+	}
 
+	.card {
+		margin: 10px;
+		box-shadow: 0 5px 10px -2.5px;
+	}
   </style>
 </head>
 <body>
@@ -23,22 +30,19 @@
 	background-size: cover;  background-repeat: no-repeat; 
 	background-position: center center; ">
 
-		<div class="container">
-			<div class="row justify-content-end">
-				<div class="col col-sm-5">
-					<img src="assets/comein.png" width="100%" alt="">
-				</div>
+		<div class="container-fluid">
+			<div class="d-flex justify-content-start p-1 ">
+				<img src="assets/logo2.png" width="17%" style="min-width: 200px;">
+			</div>		
+			<div class="d-flex justify-content-end p-1">
+				<img src="assets/comein.png" width="40%" style="min-width: 340px; margin-top: 100px">
+			</div>		
+			<div class="d-flex justify-content-end gradient-buttons">
+				<button type="button" class="btn btn-danger" style="font-size: 20px;margin-right: 50px;">&nbsp;&nbsp;Explore Deals&nbsp;&nbsp;</button>
+				
 			</div>
-			<div class="row justify-content-end">
-				<div class="col col-sm-2">
-					<button type="button" class="btn btn-primary btn-lg">Explore Deals</button>
-				</div>
-			</div>
-			<div class="row justify-content-start">
-				<div class="col col-sm-2">
-					 <img src="assets/logo2.png" width="100%" alt="">
-				 </div>
-		   </div>
+			
+			
 		</div>
 
 </div>
