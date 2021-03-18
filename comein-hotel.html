@@ -51,6 +51,96 @@ th {
       h2 {
         color: #4287f5;
       }
+/* ================modal image========================= */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
   </style>
 
 </head>
@@ -97,13 +187,12 @@ th {
             </thead>
             <tbody>
                     
-                    <tr>
+                      <tr>
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/14.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/14.png" alt="PANNZIAN BEACH RESORT" style="width:100%;max-width:300px">
+
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
@@ -131,9 +220,7 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/15.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/15.png" alt="IKANI SURF RESORT" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
@@ -160,9 +247,7 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/16.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/16.png" alt="JAVA HOTEL" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
@@ -189,9 +274,7 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/17.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/17.png" alt="PANGIL BEACH RESORT" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
@@ -218,9 +301,7 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/18.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/18.png" alt="VILLA ANDREA BEACH RESORT" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
@@ -247,27 +328,25 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/19.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/19.png" alt="VYBE HOTEL" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i>VYBE HOTEL 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 55 Barit - A, General Segundo Avenue, Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> +63 917 883 2999 / +63 928 346 9559 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> sales@vivailocos.com</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="https://www.facebook.com/VYBEhotel/" class="btn btn-primary">QUEEN DELUXE | tarting at PHP1,600   Book Now</a>
                                 </div>
                             </div>
                         </td>
@@ -276,27 +355,25 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/20.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/20.png" alt="VIVEN HOTEL" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i>VIVEN HOTEL 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Valdez Center, San Nicolas, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0917 859 3450 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> vivenhotelsannicolas@gmail.com</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="https://www.facebook.com/vivenhotelsannicolas/" class="btn btn-primary">STANDARD DOUBLE/TWIN ROOM | Starting at PHP1,980 |  Book Now</a>
                                 </div>
                             </div>
                         </td>
@@ -305,27 +382,25 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/21.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/21.png" alt="CASA CONSUELO" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> CASA CONSUELO 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy Balaoi, Pagudpud, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0998 982 8438 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> casa_consuelo@hotmail.com</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="http://www.agoda.com/casa-consuelo-resort-island-reef/hotel/pagudpud-ph.html/" class="btn btn-primary">SINGLE/DOUBLE VISTA | Starting at PHP2,500 |  Book Now</a>
                                 </div>
                             </div>
                         </td>
@@ -334,27 +409,25 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/22.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/22.png" alt="FORT ILOCANDIA RESORT HOTEL" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> FORT ILOCANDIA RESORT HOTEL 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Calayab, Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (+63)917-599-4863, (+63)922-850-5473, (+63)998-845-4064 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> booking@fortilocandia.com.ph</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="http://www.fortilocandia.com.ph/" class="btn btn-primary">STANDARD SINGLE/TWIN | Starting at PHP2,850 | Book Now</a>
                                 </div>
                             </div>
                         </td>
@@ -363,27 +436,25 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/23.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/23.png" alt="AA TRAVELLERS PAD" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> AA TRAVELLERS PAD 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> McKinley Street, Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0917 565 9410 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> aatravellerspad@gmail.com</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="https://www.facebook.com/aatravellerspadilocos/" class="btn btn-primary">DOUBLE ROOM | Starting at PHP700 |  Book Now</a>
                                 </div>
                             </div>
                         </td>
@@ -392,27 +463,25 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/24.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/24.png" alt="RIO GRANDE DE LAOAG RESORT" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> IO GRANDE DE LAOAG RESORT 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Batac City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Suyo, Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0917 483 6102 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> riograne_laoag@yahoo.com</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="http://riograndedelaoagresorthotel.com/" class="btn btn-primary">DELUXE | Starting at PHP1,888 | Book Now</a>
                                 </div>
                             </div>
                         </td>
@@ -421,33 +490,72 @@ th {
                         <div class="card" style="width: 100%;">
                         <div class="row no-gutters">
                         <td width="30%">
-                            <div>
-                                <img class="card-img" src="assets/hotels/25.png">
-                            </div>
+                            <img class="myImages" id="myImg" src="assets/hotels/25.png" alt="ZIUR INN" style="width:100%;max-width:300px">
                         </td>
                         <td width="70%">
                             <div class="col-sm-9 no-gutters">
                                 <div class="card-body">
                                     <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
                                     
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> MY TRAVELICIOUS TRAVEL AGENCY 
+                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> ZIUR INN 
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
                                     </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 13 T. Pasion St., Asian Pearl Bldg., Batac City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 773-1756 / 0917-798-8999 / 0966-817-5035 / 0998-989-8447 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ytravelicious@yahoo.com / mytravelicious09@gmail.com</p>
+                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Villanueva Street, Laoag City, Ilocos Norte <BR>
+                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> +639175661378 <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ziurinn@gmail.com</p>
                                     
-                                    <a href="https://mytraveliciousph.com/" class="btn btn-primary">Starting at PHP 6,500.00  |  Book Now</a>
+                                    <a href="https://www.facebook.com/ziurinn.ilocos/" class="btn btn-primary">SINGLE ROOM | Starting at PHP800 | Book Now</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-               
+                    
+                    <!-- ====================enlarge images==================== -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <script>
+                        // create references to the modal...
+                            var modal = document.getElementById('myModal');
+                            // to all images -- note I'm using a class!
+                            var images = document.getElementsByClassName('myImages');
+                            // the image in the modal
+                            var modalImg = document.getElementById("img01");
+                            // and the caption in the modal
+                            var captionText = document.getElementById("caption");
+
+                            // Go through all of the images with our custom class
+                            for (var i = 0; i < images.length; i++) {
+                            var img = images[i];
+                            // and attach our click listener for this image.
+                            img.onclick = function(evt) {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                            }
+                            }
+
+                            var span = document.getElementsByClassName("close")[0];
+
+                            span.onclick = function() {
+                            modal.style.display = "none";
+                            }
+                    </script>
+
+
+
+
+
+
                     </tbody>
+
+
                     </table>
                     </div>
     </div>
