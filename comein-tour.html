@@ -17,13 +17,13 @@
 
   <script>
     $(document).ready( function () {
-    $('#toursTable').DataTable({
-         responsive: true,
-         "ordering": false,
-         "lengthMenu": [[2, 5, 10, 25, 50, -1], [2, 5, 10, 25, 50, "All"]],
-         "dom": '<"gray"lf>t<"gray"ip>',}         
-     );
-   
+        $('#toursTable').DataTable({
+            responsive: true,
+            "ordering": false,
+            "lengthMenu": [[2, 5, 10, 25, 50, -1], [2, 5, 10, 25, 50, "All"]],
+            "dom": '<"gray rounded"lf<"clear">>t<"gray rounded"ip<"clear">>',}         
+        );
+        
      } );
 
 
@@ -32,34 +32,61 @@
   <style type="text/css">
         .bcontent {
             margin-top: 40px;
+            padding-bottom: 40px;
         }
         .center{
             margin-left: auto;
             margin-right: auto;
         }
 
+        table.dataTable.no-footer {
+            border-bottom: 0;
+        }
+
+        table.dataTable thead th {
+            border-bottom: 0;
+        }
+        
+        table.dataTable tfoot th {
+            border-top: 0;
+        }
 
         .table, table.dataTable tbody th, table.dataTable tbody td, table.dataTable tbody tr {
             border-collapse: separate;
             border-spacing:0 20px;
             background-color:rgba(0, 0, 0, 0);
+            
         }
+
+        #toursTable_length, #toursTable_filter, #toursTable_info, #toursTable_paginate {
+            font-size: 1rem;
+        }
+
+        .table, table.dataTable thead th, table.dataTable thead td, table.dataTable thead tr {
+            padding: 0px;
+        }
+
         th {
                 background-color: transparent;
                 color: transparent;
+                
             }
-        th,
+        
         td {
             width: 150px;
             border: 0px ;
-            padding: 5px;
+   
             background-color: transparent;
         }
         h2 {
             color: #4287f5;
         }
         .gray{
-            background-color: lightgray;
+            background-color: white;
+            padding: 10px;
+        }
+        .clear{
+            clear:both;
         }
 
         /* Style the Image Used to Trigger the Modal */
@@ -76,7 +103,7 @@
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
+        padding-top: 50px; /* Location of the box */
         left: 0;
         top: 0;
         width: 100%; /* Full width */
@@ -92,18 +119,6 @@
         display: block;
         width: 80%;
         max-width: 700px;
-        }
-
-        /* Caption of Modal Image (Image Text) - Same Width as the Image */
-        #caption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        text-align: center;
-        color: #ccc;
-        padding: 10px 0;
-        height: 150px;
         }
 
         /* Add Animation - Zoom in the Modal */
