@@ -16,540 +16,629 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
   <script>
-       $(document).ready( function () {
-       $('#table_Hotels').DataTable({
+    $(document).ready( function () {
+        $('#toursTable').DataTable({
             responsive: true,
-            "lengthMenu": [[2, 5, 10, 25, 50, -1], [2, 5, 10, 25, 50, "All"]],}
+            "ordering": false,
+            "lengthMenu": [[2, 5, 10, 25, 50, -1], [2, 5, 10, 25, 50, "All"]],
+            "dom": '<"gray rounded"lf<"clear">>t<"gray rounded"ip<"clear">>',}         
         );
-      
-        } );
+        
+     } );
 
 
-  </script>
-
+</script>
 
   <style type="text/css">
-         .bcontent {
-            margin-top: 40px;
+        .bcontent {
+            margin-top: 10px;
+            padding-bottom: 40px;
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
         }
 
-    .table {
-    border-collapse: separate;
-    border-spacing:0 20px;
-}
-th {
-        background-color: transparent;
-        color: white;
-      }
-      th,
-      td {
-        width: 150px;
-        text-align: center;
-        border: 1px solid white;
-        padding: 5px;
-      }
-      h2 {
-        color: #4287f5;
-      }
-/* ================modal image========================= */
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+        table.dataTable.no-footer {
+            border-bottom: 0;
+        }
 
-#myImg:hover {
-  opacity: 0.7;
-}
+        table.dataTable thead th {
+            border-bottom: 0;
+        }
+        
+        table.dataTable tfoot th {
+            border-top: 0;
+        }
 
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/ opacity */
-}
+        .table, table.dataTable tbody th, table.dataTable tbody td, table.dataTable tbody tr {
+            border-collapse: separate;
+            border-spacing:0 20px;
+            background-color:rgba(0, 0, 0, 0);
+            
+        }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
+        #toursTable_length, #toursTable_filter, #toursTable_info, #toursTable_paginate {
+            font-size: 1rem;
+        }
 
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
+        .table, table.dataTable thead th, table.dataTable thead td, table.dataTable thead tr {
+            padding: 0px;
+        }
 
-.modal-content,
-#caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
+        th {
+                background-color: transparent;
+                color: transparent;
+                
+            }
+        
+        td {
+            width: 150px;
+            border: 0px ;
+   
+            background-color: transparent;
+        }
+        h2 {
+            color: #4287f5;
+        }
+        .gray{
+            background-color: white;
+            padding: 10px;
+        }
+        .clear{
+            clear:both;
+        }
 
-@keyframes zoom {
-  from {
-    transform: scale(0)
-  }
-  to {
-    transform: scale(1)
-  }
-}
+        /* Style the Image Used to Trigger the Modal */
+        #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+        #myImg:hover {opacity: 0.7;}
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 50px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
 
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
-}
+        /* Modal Content (Image) */
+        .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        }
+
+        /* Add Animation - Zoom in the Modal */
+        .modal-content, #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+        }
+
 
   </style>
 
 </head>
 <body>
 
-<div class="container-fluid" 
-	style="min-height: 100vh; padding: 0px; margin: 
+<div class="container-fluid"
+	style="min-height: 100vh; padding: 0px; margin:
 	0px; background-image: url('assets/bg.jpg');
-	background-size: cover;  background-repeat: no-repeat; 
+	background-size: cover;  background-repeat: no-repeat;
 	background-position: center center; ">
 
-	<nav class="navbar  navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">ComeIN</a>
-		 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
-		    	<li class="nav-item">
-		        	<a class="nav-link" href="comein-home.html">Home</a>
-		      	</li>
-		      	<li class="nav-item active">
-		        	<a class="nav-link" href="comein-tour.html">Tour Packages</a>
-		      	</li>
-		      	<li class="nav-item active">
-		        	<a class="nav-link" href="comein-hotel.html">Hotel</a>
-		      	</li>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="comein-food.html">Food and Dining</a>
-		      	</li>
-		    </ul>
-		 </div>
-		</nav>
+    <div class="d-flex justify-content-center p-1 ">
+        <img src="assets/logo2.png" width="17%" style="min-width: 230px;">
+    </div>	
+
+    <div class="container-fluid d-flex flex-wrap justify-content-center p-1">
+            <!-- <a href="comein-home.html" type="button" class="btn btn-lg btn-danger m-1">Home</a> -->
+            <a href="comein-tour.html" type="button" class="btn btn-lg btn-danger m-1">&nbsp;&nbsp;Tours&nbsp;&nbsp;</a>
+            <a href="comein-hotel.html" type="button" class="btn btn-lg btn-danger m-1 active">&nbsp;&nbsp;Hotels&nbsp;&nbsp;</a>
+            <a href="comein-food.html" type="button" class="btn btn-lg btn-danger m-1">&nbsp;&nbsp;Dining&nbsp;&nbsp;</a>
+    </div>
 
 
     <div class="container bcontent">
-        <div class="table-responsive">
-        <table class="table dt-responsive nowrap" id="table_Hotels" style="width:100%">
+        <table id="toursTable" class="" role="grid" aria-describedby="example_info">
             <thead>
-                    <tr class="text-center bg-primary text-white rounded-pill mb-2">
-                            <th></th>
-                            <th></th>
-                    </tr>
+                <tr class="">
+                    <th></th>
+                </tr>
             </thead>
             <tbody>
-                    
-                      <tr>
+                <tr>
+                    <td>
                         <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/14.png" alt="PANNZIAN BEACH RESORT" style="width:100%;max-width:300px">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/14.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">PANNZIAN BEACH RESORT</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. Pancian, Pagudpud, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">(0920)9520662</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">pannzian@yahoo.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 3,000.00</span><BR>
+                                            <a href="http://www.pannzian.com/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/15.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">IKANI SURF RESORT</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. Balaoi, Pagudpud, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">09188885953</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">zephyrikani@gmail.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 3,250.00</span><BR>
+                                            <a href="https://www.facebook.com/IkaniSurf/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/16.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">JAVA HOTEL</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Gen. Segundo Ave., Laoag City, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">(077) 770 5996</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">javahotel@gmail.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 2,939.13</span><BR>
+                                            <a href="http://www.javahotel.com.ph/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/17.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">PANGIL BEACH RESORT</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Pangil, Currimao, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">09778999904</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">pangilbeachresort@yahoo.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 1,750.00</span><BR>
+                                            <a href="https://www.facebook.com/PangilBeachResort/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/18.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">VILLA ANDREA BEACH RESORT</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. Caparispisan, Pagudpud, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">09173251096, 09989982705</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">villaandrea@pagudpudbeachresort.com.ph</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 2,000.00</span><BR>
+                                            <a href="http://www.pagudpudbeachresort.com.ph/book-now.html/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/19.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">VYBE HOTEL</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. 55 Barit - A, General Segundo Avenue, Laoag City, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">+63 917 883 2999 / +63 928 346 9559</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">sales@vivailocos.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 1,600.00</span><BR>
+                                            <a href="https://www.facebook.com/VYBEhotel/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/20.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">VIVEN HOTEL</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Valdez Center, San Nicolas, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">0917 859 3450</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">vivenhotelsannicolas@gmail.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 1,980.00</span><BR>
+                                            <a href="https://www.facebook.com/vivenhotelsannicolas/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/21.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">CASA CONSUELO</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy Balaoi, Pagudpud, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">0998 982 8438</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">casa_consuelo@hotmail.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 2,500.00</span><BR>
+                                            <a href="http://www.agoda.com/casa-consuelo-resort-island-reef/hotel/pagudpud-ph.html/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/22.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">FORT ILOCANDIA RESORT HOTEL</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. Calayab, Laoag City, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">(+63)917-599-4863, (+63)922-850-5473, (+63)998-845-4064</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">booking@fortilocandia.com.ph</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 2,850.00</span><BR>
+                                            <a href="http://www.fortilocandia.com.ph/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/24.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">AA TRAVELLERS PAD</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">McKinley Street, Laoag City, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">0917 565 9410</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">aatravellerspad@gmail.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 700.00</span><BR>
+                                            <a href="https://www.facebook.com/aatravellerspadilocos/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/25.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">RIO GRANDE DE LAOAG RESORT</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Brgy. Suyo, Laoag City, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">0917 483 6102</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">riograne_laoag@yahoo.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 1,888.00</span><BR>
+                                            <a href="http://riograndedelaoagresorthotel.com/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 100%;">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-3"> <!-- style="background:url('./assets/tour/1.png') no-repeat 0 0; background-position: center; width:100%; height:250px; background-size: cover;"> -->
+                                    <img class="card-img myImg" src="assets/hotels/25.png">
+                                </div>
+                                <div class="col-md-6 no-gutters">
+                                    <div class="card-body">
+                                        <h5 class="card-title" >ALL-IN ILOCOS NORTE PACKAGE</h5>
+                                        <p class="card-text">
+                                            <i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">ZIUR INN</span>
+                                        </p>
+                                        <p>
+                                            <i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">Villanueva Street, Laoag City, Ilocos Norte</span> <BR>
+                                            <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">+639175661378</span> <BR>
+                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> <span style="font:size 2vw;">ziurinn@gmail.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">
+                                            <span style="font-size: 2rem; color: orange;">&#10026; &#10026; &#10026; &#10026; &#10026;</span><BR>
+                                            <span class="text-primary" style="font-size:1rem;">Starting at</span><BR>
+                                            <span class="text-primary font-weight-bold" style="font-size:2rem;">PHP 800.00</span><BR>
+                                            <a href="https://www.facebook.com/ziurinn.ilocos/" class="btn btn-primary">Book Now</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+</div>
 
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> PANNZIAN BEACH RESORT 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Pancian, Pagudpud <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (0920)9520662 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> pannzian@yahoo.com</p>
-                                    
-                                    <a href="http://www.pannzian.com/" class="btn btn-primary">QUEEN | Starting at PHP3,000  |  Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/15.png" alt="IKANI SURF RESORT" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> IKANI SURF RESORT 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Balaoi, Pagudpud <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 09188885953 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> zephyrikani@gmail.com</p>
-                                    
-                                    <a href="https://www.facebook.com/IkaniSurf/" class="btn btn-primary">GARDEN VILLA | Starting at PHP3,250   Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/16.png" alt="JAVA HOTEL" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> JAVA HOTEL 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Gen. Segundo Ave., Laoag City <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (077) 770 5996 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> javahotel@gmail.com</p>
-                                    
-                                    <a href="http://www.javahotel.com.ph/" class="btn btn-primary">DELUXE TWIN | Starting at PHP2,939.13   Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/17.png" alt="PANGIL BEACH RESORT" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> PANGIL BEACH RESORT 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Pangil, Currimao, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 09778999904 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> pangilbeachresort@yahoo.com</p>
-                                    
-                                    <a href="https://www.facebook.com/PangilBeachResort/" class="btn btn-primary">CASITAS | Starting at PHP1,750   Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/18.png" alt="VILLA ANDREA BEACH RESORT" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i>VILLA ANDREA BEACH RESORT 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Caparispisan, Pagudpud, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 09173251096, 09989982705 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> villaandrea@pagudpudbeachresort.com.ph</p>
-                                    
-                                    <a href="http://www.pagudpudbeachresort.com.ph/book-now.html/" class="btn btn-primary">STANDARD ROOM | Starting at PHP2,000   Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/19.png" alt="VYBE HOTEL" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i>VYBE HOTEL 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. 55 Barit - A, General Segundo Avenue, Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> +63 917 883 2999 / +63 928 346 9559 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> sales@vivailocos.com</p>
-                                    
-                                    <a href="https://www.facebook.com/VYBEhotel/" class="btn btn-primary">QUEEN DELUXE | tarting at PHP1,600   Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/20.png" alt="VIVEN HOTEL" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i>VIVEN HOTEL 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Valdez Center, San Nicolas, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0917 859 3450 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> vivenhotelsannicolas@gmail.com</p>
-                                    
-                                    <a href="https://www.facebook.com/vivenhotelsannicolas/" class="btn btn-primary">STANDARD DOUBLE/TWIN ROOM | Starting at PHP1,980 |  Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/21.png" alt="CASA CONSUELO" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> CASA CONSUELO 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy Balaoi, Pagudpud, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0998 982 8438 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> casa_consuelo@hotmail.com</p>
-                                    
-                                    <a href="http://www.agoda.com/casa-consuelo-resort-island-reef/hotel/pagudpud-ph.html/" class="btn btn-primary">SINGLE/DOUBLE VISTA | Starting at PHP2,500 |  Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/22.png" alt="FORT ILOCANDIA RESORT HOTEL" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> FORT ILOCANDIA RESORT HOTEL 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Calayab, Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> (+63)917-599-4863, (+63)922-850-5473, (+63)998-845-4064 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> booking@fortilocandia.com.ph</p>
-                                    
-                                    <a href="http://www.fortilocandia.com.ph/" class="btn btn-primary">STANDARD SINGLE/TWIN | Starting at PHP2,850 | Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/23.png" alt="AA TRAVELLERS PAD" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> AA TRAVELLERS PAD 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> McKinley Street, Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0917 565 9410 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> aatravellerspad@gmail.com</p>
-                                    
-                                    <a href="https://www.facebook.com/aatravellerspadilocos/" class="btn btn-primary">DOUBLE ROOM | Starting at PHP700 |  Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/24.png" alt="RIO GRANDE DE LAOAG RESORT" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> IO GRANDE DE LAOAG RESORT 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Brgy. Suyo, Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> 0917 483 6102 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> riograne_laoag@yahoo.com</p>
-                                    
-                                    <a href="http://riograndedelaoagresorthotel.com/" class="btn btn-primary">DELUXE | Starting at PHP1,888 | Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <div class="card" style="width: 100%;">
-                        <div class="row no-gutters">
-                        <td width="30%">
-                            <img class="myImages" id="myImg" src="assets/hotels/25.png" alt="ZIUR INN" style="width:100%;max-width:300px">
-                        </td>
-                        <td width="70%">
-                            <div class="col-sm-9 no-gutters">
-                                <div class="card-body">
-                                    <h5 class="card-title">ALL-IN ILOCOS NORTE PACKAGE</h5>
-                                    
-                                    <p class="card-text"><i class="bi-cursor-fill" style="font-size: 1rem; color: black;"></i> ZIUR INN 
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    <i class="bi-star-fill" style="font-size: 1rem; color: orange;"></i>
-                                    </p>
-                                    <p class="card-text"></p><i class="bi-geo-alt-fill" style="font-size: 1rem; color: black;"></i> Villanueva Street, Laoag City, Ilocos Norte <BR>
-                                        <i class="bi-telephone-fill" style="font-size: 1rem; color: black;"></i> +639175661378 <BR>
-                                            <i class="bi-envelope-fill" style="font-size: 1rem; color: black;"></i> ziurinn@gmail.com</p>
-                                    
-                                    <a href="https://www.facebook.com/ziurinn.ilocos/" class="btn btn-primary">SINGLE ROOM | Starting at PHP800 | Book Now</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    
-                    <!-- ====================enlarge images==================== -->
-                    <div id="myModal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">
-                        <div id="caption"></div>
-                    </div>
-                    <script>
-                        // create references to the modal...
-                            var modal = document.getElementById('myModal');
-                            // to all images -- note I'm using a class!
-                            var images = document.getElementsByClassName('myImages');
-                            // the image in the modal
-                            var modalImg = document.getElementById("img01");
-                            // and the caption in the modal
-                            var captionText = document.getElementById("caption");
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-                            // Go through all of the images with our custom class
-                            for (var i = 0; i < images.length; i++) {
-                            var img = images[i];
-                            // and attach our click listener for this image.
-                            img.onclick = function(evt) {
-                            modal.style.display = "block";
-                            modalImg.src = this.src;
-                            captionText.innerHTML = this.alt;
-                            }
-                            }
-
-                            var span = document.getElementsByClassName("close")[0];
-
-                            span.onclick = function() {
-                            modal.style.display = "none";
-                            }
-                    </script>
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+  
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
 
 
+<script type="text/javascript" class="init">
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var imgs =  [].slice.call(document.getElementsByClassName("myImg"));
+console.log(imgs);
+var modalImg = document.getElementById("img01");
+
+function assignOnClick(img,index){
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    console.log(modalImg.src);
+};};
+
+imgs.forEach(assignOnClick);
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+</script>
 
 
 
