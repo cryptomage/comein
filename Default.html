@@ -167,7 +167,7 @@
             + minutes + "m " + seconds + "s " + distance;
 
         // If the count down is finished, write some text
-        if (distance - 4351050 < 0) {
+        if (distance < 0) {
             clearInterval(x);
             //document.getElementById("demo").innerHTML = "EXPIRED";
             window.location.href = 'comein-home.html';
