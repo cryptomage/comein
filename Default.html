@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+     <link rel="icon" href="https://ilocosnorte.ph/images/thumbnail.png">
+    <title>Ilocos Norte I'M IN</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "barabara";
+            src: url("{{asset('barabara/barabara-webfont.woff')}}");
+        }
+
+        body {
+            background-image: url("{{asset('images/spots_sil_light.png')}}");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+        .btn-primary {
+            font-family: barabara, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 5vw;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            background: transparent;
+            transition: all 0.3s ease 0s;
+            padding: 5px 50px;
+            color: rgba(24, 93, 241, 1);
+            border: 2px solid rgba(24, 93, 241, 1);
+        }
+
+        .btn-primary:hover {
+            color: #FFF;
+            background: rgba(255, 107, 119, 1);
+            border: 2px solid rgba(255, 107, 119, 1);
+        }
+
+        /*faded horizontal line*/
+        .fade_rule {
+            height: 1px;
+            background-color: #E6E6E6;
+            /*width: 66.0em;*/
+            /*margin: 0 auto;*/
+            background-image: linear-gradient(left, white 2%, #fd27e8 50%, white 98%);
+            background-image: -o-linear-gradient(left, white 2%, #fd27e8 50%, white 98%);
+            background-image: -moz-linear-gradient(left, white 2%, #fd27e8 50%, white 98%);
+            background-image: -webkit-linear-gradient(left, white 2%, #fd27e8 50%, white 98%);
+            background-image: -ms-linear-gradient(left, white 2%, #fd27e8 50%, white 98%);
+            background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, #fd27e8), color-stop(0.98, white));
+        }
+
+        #div-right {
+            margin-bottom:5px;
+        }
+
+        #pic{
+            max-width: 300px;
+            box-shadow: 10px 10px 5px #ccc;
+            -moz-box-shadow: 10px 10px 5px #ccc;
+            -webkit-box-shadow: 10px 10px 5px #ccc;
+            -khtml-box-shadow: 10px 10px 5px #ccc;
+        }
+
+        #logo{
+            width: 40%;
+        }
+
+
+        /* Small devices (portrait tablets and large phones, 470px and up) */
+        @media only screen and (min-width: 470px) {
+            #div-right {
+                margin-bottom:25px;
+            }
+            #pic{
+                max-width: 400px;
+            }
+        }
+
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            #div-right {
+                margin-bottom: 50px;
+            }
+            #pic{
+                max-width: 450px;
+            }
+
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .btn-primary {
+                font-size: 3vw;
+
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .btn-primary {
+                font-size: 2vw;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="container h-75">
+    <div class="row align-items-center h-100">
+        <div class="col-md-6 mx-auto text-center" id="div-right">
+            <img class="img-fluid " src="https://stayin.ilocosnorte.ph/img/intologo.png" alt="" id="logo">
+            <hr class="fade_rule">
+            <h4>Online travel sale starts in</h4>
+            <h1 id="demo"></h1>
+        </div>
+        <div class="col-md-6 mx-auto text-center" id="div-left">
+            <img class="img-fluid " src="https://ilocosnorte.ph/images/sale.png" alt="" width="100%" id="pic">
+        </div>
+    </div>
+</div>
+<footer class="col-md-12 my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2020 Ilocos Norte Tourism Office</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="https://ilocosnorte.gov.ph/">Provincial Government of Ilocos Norte</a>
+        </li>
+        <li class="list-inline-item">|</li>
+        <li class="list-inline-item"><a href="http://www.tourism.ilocosnorte.gov.ph/">Ilocos Norte Tourism Office</a>
+        </li>
+    </ul>
+</footer>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Mar 19, 2021 00:00:01").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            //document.getElementById("demo").innerHTML = "EXPIRED";
+            window.location.href = 'comein-home.html';
+        }
+    }, 1000);
+</script>
+</body>
+</html>
+
+
